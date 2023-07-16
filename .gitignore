@@ -23,6 +23,3 @@ testbin/*
 # go workspace
 go.work
 go.work.sum
-
-# earthly
-Earthfile

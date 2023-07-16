@@ -1,0 +1,46 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: external-posgres-db
+spec:
+  selector:
+    matchLabels:
+      app: external-posgres-db
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: external-posgres-db
+    spec:
+      containers:
+        - name: external-posgres-db
+          image: entando/entando-postgres-rocky:14.1.0
+          ports:
+            - containerPort: 5432
+              name: "postgres"
+          resources: {}
+          env:
+            - name: POSTGRESQL_USER
+              value: testuser
+            - name: POSTGRESQL_PASSWORD
+              value: testuser
+            - name: POSTGRESQL_ADMIN_PASSWORD
+              value: postgres
+            - name: POSTGRESQL_DATABASE
+              value: BUNDLE_MULTI_DB
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: external-posgres-db-service
+spec:
+  type: NodePort
+  selector:
+    app: external-posgres-db
+  ports:
+    - name: "postgres"
+      protocol: TCP
+      port: 5432
+      targetPort: 5432
+      nodePort: 30432

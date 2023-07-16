@@ -1,0 +1,10 @@
+apiVersion: gateway.entando.org/v1alpha1
+kind: EntandoGatewayV2
+metadata:
+  name: entandogatewayv2-sample
+spec:
+  ingressName: mytest
+  ingressHost: ingress.10.131.132.235.nip.io
+  ingressPath: /
+  ingressPort: http
+  ingressService: test-nginx-service 

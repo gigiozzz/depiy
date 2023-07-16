@@ -1,0 +1,24 @@
+# permissions for end users to edit entandopluginv2s.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: entandopluginv2-editor-role
+rules:
+- apiGroups:
+  - plugin.entando.org
+  resources:
+  - entandopluginv2s
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - plugin.entando.org
+  resources:
+  - entandopluginv2s/status
+  verbs:
+  - get

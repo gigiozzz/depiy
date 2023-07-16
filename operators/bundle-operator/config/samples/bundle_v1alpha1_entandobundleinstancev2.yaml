@@ -1,0 +1,9 @@
+apiVersion: bundle.entando.org/v1alpha1
+kind: EntandoBundleInstanceV2
+metadata:
+  name: bundleinstance-sample
+spec:
+  repository: docker.io/gigiozzz/bundle-test-op
+  tag: "0.0.1"
+  digest: sha256:a41dbb9b16f052f1d26a22a5de34671e831cfb6fd327726f89bed5f8798dfd23
+

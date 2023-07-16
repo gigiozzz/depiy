@@ -1,0 +1,14 @@
+apiVersion: bundle.entando.org/v1alpha1
+kind: EntandoBundleV2
+metadata:
+  name: mybundle
+spec:
+  title: My Bundle sample
+  signatureInfo: "Signed with cosign"
+  repository: docker.io/gigiozzz/bundle-test-op
+  tagList:
+    - tag: "0.0.1"
+      digest: "sha256:a41dbb9b16f052f1d26a22a5de34671e831cfb6fd327726f89bed5f8798dfd23"
+      signatureInfo:
+        - type: KEY_PAIR
+          pubKeySecret: k8s://bundle-operator/bundle-a4e2c0a3-key-secret

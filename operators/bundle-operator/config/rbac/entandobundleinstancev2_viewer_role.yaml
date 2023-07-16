@@ -1,0 +1,20 @@
+# permissions for end users to view entandobundleinstancev2s.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: entandobundleinstancev2-viewer-role
+rules:
+- apiGroups:
+  - bundle.entando.org
+  resources:
+  - entandobundleinstancev2s
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - bundle.entando.org
+  resources:
+  - entandobundleinstancev2s/status
+  verbs:
+  - get

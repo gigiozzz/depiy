@@ -1,0 +1,20 @@
+version: v1.0.0
+name: example
+description: Example bundle
+dependencies: []
+components:
+  - name: web
+    type: PLUGIN
+    spec:
+      repository: docker.io/nginx
+      tag: 1.23.3
+      digest: sha256:9a821cadb1b13cb782ec66445325045b2213459008a41c72d8d87cde94b33c8c
+      healthCheckPath: /
+      port: 80
+      ingressName: mytest
+      ingressHost: ingress.10.131.132.129.nip.io
+      ingressPath: /
+  - name: db-service  
+    type: MANIFEST
+    spec:
+      filePath: /manifests/db-service.yaml

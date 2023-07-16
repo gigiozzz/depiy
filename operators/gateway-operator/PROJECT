@@ -1,0 +1,19 @@
+domain: entando.org
+layout:
+- go.kubebuilder.io/v3
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: gateway-operator
+repo: github.com/gigiozzz/depiy/operators/gateway-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: entando.org
+  group: gateway
+  kind: EntandoGatewayV2
+  path: github.com/gigiozzz/depiy/operators/gateway-operator/api/v1alpha1
+  version: v1alpha1
+version: "3"

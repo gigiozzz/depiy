@@ -1,0 +1,4 @@
+## Append samples you want in your CSV to this file as resources ##
+resources:
+- plugin_v1alpha1_entandopluginv2.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

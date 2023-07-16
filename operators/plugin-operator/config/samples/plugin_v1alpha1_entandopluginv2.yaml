@@ -1,0 +1,10 @@
+apiVersion: plugin.entando.org/v1alpha1
+kind: EntandoPluginV2
+metadata:
+  name: my-sample
+spec:
+  image: nginx:latest
+  port: 80
+  ingressName: mytest
+  ingressHost: ingress.10.131.132.235.nip.io
+  ingressPath: /

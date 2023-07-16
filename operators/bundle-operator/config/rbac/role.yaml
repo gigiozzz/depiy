@@ -1,0 +1,59 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - bundle.entando.org
+  resources:
+  - entandobundleinstancev2s
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - bundle.entando.org
+  resources:
+  - entandobundleinstancev2s/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - bundle.entando.org
+  resources:
+  - entandobundleinstancev2s/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - bundle.entando.org
+  resources:
+  - entandobundlev2s
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - bundle.entando.org
+  resources:
+  - entandobundlev2s/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - bundle.entando.org
+  resources:
+  - entandobundlev2s/status
+  verbs:
+  - get
+  - patch
+  - update

@@ -1,0 +1,28 @@
+domain: entando.org
+layout:
+- go.kubebuilder.io/v3
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: bundle-operator
+repo: github.com/gigiozzz/bundle-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: entando.org
+  group: bundle
+  kind: EntandoBundleV2
+  path: github.com/gigiozzz/bundle-operator/api/v1alpha1
+  version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: entando.org
+  group: bundle
+  kind: EntandoBundleInstanceV2
+  path: github.com/gigiozzz/bundle-operator/api/v1alpha1
+  version: v1alpha1
+version: "3"
